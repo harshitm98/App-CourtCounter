@@ -13,21 +13,38 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    int score = 0;
+    int score1 = 0;
 
     public void three_points(View view){
-        score+=3;
-        displayForTeamA(score);
+        score1+=3;
+        displayForTeamA(score1);
     }
 
     public void two_points(View view){
-        score+=2;
-        displayForTeamA(score);
+        score1+=2;
+        displayForTeamA(score1);
     }
 
     public void free_throw(View view){
+        score1+=1;
+        displayForTeamA(score1);
+    }
+
+    int score = 0;
+
+    public void three_pointsb(View view){
+        score+=3;
+        displayForTeamB(score);
+    }
+
+    public void two_pointsb(View view){
+        score+=2;
+        displayForTeamB(score);
+    }
+
+    public void free_throwb(View view){
         score+=1;
-        displayForTeamA(score);
+        displayForTeamB(score);
     }
 
     /**
@@ -35,6 +52,11 @@ public class MainActivity extends AppCompatActivity {
      */
     public void displayForTeamA(int score) {
         TextView scoreView = (TextView) findViewById(R.id.team_a_score);
+        scoreView.setText(String.valueOf(score));
+    }
+
+    public void displayForTeamB(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.team_b_score);
         scoreView.setText(String.valueOf(score));
     }
 
